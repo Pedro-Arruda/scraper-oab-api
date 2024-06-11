@@ -12,7 +12,11 @@ model Question {
   question    String 
   category  String 
   subcategory String 
-  test String 
+  test String? 
+  alternativeA String 
+  alternativeB String 
+  alternativeC String 
+  alternativeD String 
 
   @@map("questions")
 } 

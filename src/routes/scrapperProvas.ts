@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { scrapperProvas } from "../endpoints/scrapperProvas";
+import { scrapperProvas } from "../endpoints/scrapperProvas/scrapperProvas";
 
 const router = Router();
 
