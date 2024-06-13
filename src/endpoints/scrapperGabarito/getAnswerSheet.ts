@@ -1,8 +1,8 @@
 import puppeteer from "puppeteer";
 
-export const getURLTest = async () => {
+export const getURLAnswerSheet = async () => {
   const browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
 
@@ -21,8 +21,8 @@ export const getURLTest = async () => {
 
   await page.waitForNavigation();
 
-  await page.waitForSelector(`#ContentPlaceHolder1_gvProva1_linkTeste_1`);
-  const prova = await page.$(`#ContentPlaceHolder1_gvProva1_linkTeste_1`);
+  await page.waitForSelector(`#ContentPlaceHolder1_gvProva1_linkTeste_0`);
+  const prova = await page.$(`#ContentPlaceHolder1_gvProva1_linkTeste_0`);
 
   const pageTarget = page.target();
 
@@ -36,5 +36,6 @@ export const getURLTest = async () => {
   const url = await newPage?.url();
 
   await newPage?.close();
+  await page.close();
   return url;
 };

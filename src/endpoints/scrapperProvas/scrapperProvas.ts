@@ -3,11 +3,11 @@ import { endpoint } from "@ev-fns/endpoint";
 import { splitArrayIntoChunks } from "../../functions/splitArrayIntoChunks";
 import { prisma } from "../../functions/prisma";
 import { categorizeQuestions } from "./functions/categorizeQuestions";
-import { getURLTeste } from "./functions/getURLTest";
+import { getURLTest } from "./functions/getURLTest";
 import { formatTest } from "./functions/formatTest";
 
 export const scrapperProvas = endpoint(async (req, res) => {
-  const urlTest = await getURLTeste();
+  const urlTest = await getURLTest();
 
   let count = 0;
 

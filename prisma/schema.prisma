@@ -13,10 +13,12 @@ model Question {
   category  String 
   subcategory String 
   test String? 
-  alternativeA String 
-  alternativeB String 
-  alternativeC String 
-  alternativeD String 
+  alternativeA String @map("alternative_a") 
+  alternativeB String @map("alternative_b") 
+  alternativeC String @map("alternative_c") 
+  alternativeD String @map("alternative_d") 
+  answer String? 
+  questionNumber Int @map("question_number") 
 
   @@map("questions")
 } 

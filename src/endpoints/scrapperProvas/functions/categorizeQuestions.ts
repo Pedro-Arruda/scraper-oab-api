@@ -47,13 +47,14 @@ const splitAIAnswer = (AIResponse: string, question: string) => {
 
 export const categorizeQuestions = async (arrayOfQuestions: any[]) => {
   let questionWithCategory: any = [];
+  let countArray = 0;
 
   for (let i = 0; i < arrayOfQuestions.length; i += 1) {
     console.log(`${i + 1} de ${arrayOfQuestions.length} array de questoes`);
 
     const questions = arrayOfQuestions[i];
 
-    questions.forEach(async (item: string) => {
+    questions.forEach(async (item: string, index: number) => {
       const {
         question,
         alternativeA,
@@ -70,6 +71,7 @@ export const categorizeQuestions = async (arrayOfQuestions: any[]) => {
         alternativeB,
         alternativeC,
         alternativeD,
+        questionNumber: countArray + index + 1,
       };
 
       questionWithCategory = [...questionWithCategory, obj];
@@ -78,6 +80,7 @@ export const categorizeQuestions = async (arrayOfQuestions: any[]) => {
     console.log("Esperando tempo da requisicao da IA");
 
     await sleep(90 * 1000);
+    countArray += 10;
   }
 
   return questionWithCategory;
